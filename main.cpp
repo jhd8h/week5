@@ -38,6 +38,11 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    //initialize remaining values in second matrix
+    for (int i = 0; i < 3; i++ ){
+        secondMatrix(i,3) = 0;
+    }
+
     PLOG_INFO << "Matrices created, calling wahoovian()";
 
     //call wahoovian on the first matrix, this should succeed
@@ -45,6 +50,9 @@ int main(int argc, char* argv[]) {
     matrix<double> modifiedMatrix = wahoovian(firstMatrix);
     std::cout << "First matrix after wahoovian call: " << modifiedMatrix << std::endl;
 
+    //add a space between calls in the main program for clarity
+    std::cout << std::endl;
+    
     //call wahoovian on second matrix, this should fail
     std::cout << "Second matrix before wahoovian call: " << secondMatrix << std::endl;
     modifiedMatrix = wahoovian(secondMatrix);
