@@ -1,5 +1,5 @@
 #include <iostream>
-#include "greeter/greeter.hpp"
+#include "wahoovian/wahoovian.h"
 
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
@@ -10,21 +10,22 @@
 int main(int argc, char* argv[]) {
     using namespace boost::numeric::ublas;
 
-    plog::init(plog::debug, "myapp_log.txt");
+    //init logging
+    plog::init(plog::debug, "wahoovian.log");
     PLOG_INFO << "Program beginning.";
 
-    greeter("Now running our demo program!");
-
-    std::cout << "Testing Boost Matrix example!" << std::endl;
-    matrix<double> m (3, 3);
-    for (unsigned i = 0; i < m.size1 (); ++ i)
-        for (unsigned j = 0; j < m.size2 (); ++ j) {
-            m(i, j) = 3 * i + j;
-            PLOG_DEBUG << "Indices " << i << " " << j;
+    //create matrices for use in the wahoovian function
+    std::cout << "Creating example matrices" << std::endl;
+    matrix<double> firstMatrix (3, 3);
+    matrix<double> secondMatrix (3, 4);
+    for (unsigned i = 0; i < firstMatrix.size1(); ++i) {
+        for (unsigned j = 0; j < firstMatrix.size2(); ++j) {
+            //fill matrices with data
+            firstMatrix(i, j) = 3 * i + j;
+            secondMatrix(i, j) = 3 * i + j;
         }
-    std::cout << m << std::endl;
+    }
 
-    greeter("Demo program ends!");
     PLOG_INFO << "Program ending.";
 
     return 0;
