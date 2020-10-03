@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD 14)
 # What .cpp files and header files are needed?
 
 # myapp is a CMake "target" that depends on >1 .cpp files
-add_executable(myapp main.cpp greeter/greeter.cpp)
+add_executable(myapp main.cpp wahoovian/wahoovian.cpp)
 
 
 ##### plog logging library ###################################
