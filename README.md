@@ -2,5 +2,5 @@ This is a solution to a class assignment that involves git, logging, and autobui
 
 The goal of the assignment was to implement a solution for a 'wahoovian' matrix transformation, 
 an imaginary transformation that will, if a given matrix is square:
-	Transpose the given matrix
-	Negate each value
+
+Transpose the given matrix, and negate each value
